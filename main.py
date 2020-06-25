@@ -6,6 +6,7 @@ import json
 def main():
     confernce_api_url = "https://o136z8hk40.execute-api.us-east-1.amazonaws.com/dev/get-list-of-conferences"
     response = requests.get( confernce_api_url) #Reading the data from the url
+    json_response=response.json()
 #    print("data")
     free_conferences, paid_conferences = json_response['free'], json_response['paid']
     all_conferences = free_conferences + paid_conferences #joining two list of data
